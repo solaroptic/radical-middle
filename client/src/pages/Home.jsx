@@ -37,7 +37,7 @@ const Home = () => {
         avoiding the extremes of both the right and the left.
       </h3>
       <div className={styles.posts}>
-        {posts?.length > 0 ? (
+        {Array.isArray(posts) ? (
           posts?.map((post) => (
             <div
               className={`${styles.post} ${smallScreen ? styles.small : ""} `}
