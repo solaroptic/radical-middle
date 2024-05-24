@@ -12,6 +12,7 @@ const Home = () => {
   const cat = useLocation().search;
 
   useEffect(() => {
+    console.log("lard");
     const fetchData = async () => {
       try {
         const res = await axios.get(
@@ -28,6 +29,8 @@ const Home = () => {
   const getText = (html) => {
     return html;
   };
+
+  console.log(posts, "👩‍🦳");
   return (
     <div className={styles.home}>
       <Flag />

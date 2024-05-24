@@ -2,6 +2,7 @@ import { db } from "../db.js";
 import jwt from "jsonwebtoken";
 //input validation needed use Jonas list
 export const getAllPosts = async (req, res) => {
+  console.log("👩‍🦳");
   try {
     const query = req.query.cat
       ? "SELECT * FROM posts WHERE cat = ?"

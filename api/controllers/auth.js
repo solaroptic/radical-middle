@@ -31,8 +31,6 @@ export const register = async (req, res) => {
   }
 };
 export const login = async (req, res) => {
-  console.log("rat");
-
   try {
     // Find user by username
     const [user] = await db.execute("SELECT * FROM users WHERE username = ?", [
