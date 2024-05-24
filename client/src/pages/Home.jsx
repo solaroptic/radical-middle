@@ -37,8 +37,8 @@ const Home = () => {
         avoiding the extremes of both the right and the left.
       </h3>
       <div className={styles.posts}>
-        {posts.length > 0 ? (
-          posts.map((post) => (
+        {posts?.length > 0 ? (
+          posts?.map((post) => (
             <div
               className={`${styles.post} ${smallScreen ? styles.small : ""} `}
               key={post.id}
