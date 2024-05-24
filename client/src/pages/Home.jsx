@@ -37,27 +37,31 @@ const Home = () => {
         avoiding the extremes of both the right and the left.
       </h3>
       <div className={styles.posts}>
-        {posts.map((post) => (
-          <div
-            className={`${styles.post} ${smallScreen ? styles.small : ""} `}
-            key={post.id}
-          >
-            <div className={styles.img}>
-              <img src={post?.img} alt="look!" />
-            </div>
-            <div className={styles.content}>
-              <div>
-                <Link className={styles.link} to={`/post/${post.id}`}>
-                  <h1 className={styles.postTitle}>{post.title}</h1>
-                </Link>
-                <p className={styles.postDesc}>{getText(post.desc)}</p>
+        {posts.length > 0 ? (
+          posts.map((post) => (
+            <div
+              className={`${styles.post} ${smallScreen ? styles.small : ""} `}
+              key={post.id}
+            >
+              <div className={styles.img}>
+                <img src={post?.img} alt="look!" />
               </div>
-              <Link className={styles.link} to={`/post/${post.id}`}>
-                <button>Read More</button>
-              </Link>
+              <div className={styles.content}>
+                <div>
+                  <Link className={styles.link} to={`/post/${post.id}`}>
+                    <h1 className={styles.postTitle}>{post.title}</h1>
+                  </Link>
+                  <p className={styles.postDesc}>{getText(post.desc)}</p>
+                </div>
+                <Link className={styles.link} to={`/post/${post.id}`}>
+                  <button>Read More</button>
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </div>
   );
