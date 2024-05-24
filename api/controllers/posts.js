@@ -1,8 +1,9 @@
+import { json } from "express";
 import { db } from "../db.js";
 import jwt from "jsonwebtoken";
 //input validation needed use Jonas list
 export const getAllPosts = async (req, res) => {
-  console.log("👩‍🦳");
+  console.log("👩‍🦳", "bark");
   try {
     const query = req.query.cat
       ? "SELECT * FROM posts WHERE cat = ?"
@@ -21,10 +22,13 @@ export const getAllPosts = async (req, res) => {
   }
 };
 export const getPost = async (req, res) => {
+  console.log("👩‍🦳", "meow");
+  if (!req.params.id) console.log("dog no params");
   try {
     const query =
       "SELECT p.id, `username`, `title`, `desc`, p.img, u.img AS userImg, `cat`, `cont`, `date` FROM users u JOIN posts p ON u.id=p.uid WHERE p.id = ? ";
     const [data] = await db.execute(query, [req.params.id]);
+    console.log(json(data[0]));
     return res.status(200).json(data[0]);
   } catch (error) {
     console.error(error);

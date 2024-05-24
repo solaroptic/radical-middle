@@ -30,7 +30,7 @@ const Home = () => {
     return html;
   };
 
-  console.log(posts, "👩‍🦳");
+  console.log(posts, "👩‍🦳", cat);
   return (
     <div className={styles.home}>
       <Flag />
