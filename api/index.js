@@ -16,7 +16,7 @@ app.use(
     credentials: true, // Include if your API requires cookies for authentication
   })
 );
-
+//order matters, api calls must be before static files
 app.use("/api/posts", postsRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/auth", authRoutes);
