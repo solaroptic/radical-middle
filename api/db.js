@@ -6,11 +6,11 @@ const pool = mysql.createPool({
   password: process.env.AZURE_PASS,
   database: process.env.AZURE_DB,
   port: process.env.AZURE_PORT,
-  connectionTimeout: 10000,
+  idleTimeout: 30000,
   // ssl: { ca: fs.readFileSync("{ca-cert filename}") },
 });
 
-export const db = pool.promise();
+export const db = pool;
 // import mysql from "mysql2/promise";
 
 // export const db = await mysql.createConnection({
