@@ -7,9 +7,24 @@ import Flag from "../components/Flag";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const [viewed, setViewed] = useState(false);
   const smallScreen = useMediaQuery("only screen and (max-width: 890px)");
-
   const cat = useLocation().search;
+
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => sessionStorage.setItem("viewed", "true"),
+      3600
+    );
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const storedViewed = sessionStorage.getItem("viewed");
+    if (storedViewed) {
+      setViewed(true);
+    }
+  }, []);
 
   useEffect(() => {
     console.log("lard");
@@ -33,7 +48,7 @@ const Home = () => {
   console.log(posts, "👩‍🦳", cat);
   return (
     <div className={styles.home}>
-      <Flag />
+      {!viewed && <Flag />}
       <h1 className={styles.banner}>The Radical Middle</h1>
       <h3>
         ...pushing RADICAL ideology: being reasonable, being balanced, and
