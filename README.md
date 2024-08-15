@@ -2,15 +2,15 @@
 
 ## React/Node/MySQL/Azure Cloud
 
-This project was intended to practice MySQL fluency by modifying a Llama Dev project blog. I upgraded the MySQL code and I decided to make it function in the real-world by learning to work with the Microsoft Azure cloud.
+This project was intended to practice MySQL fluency by creating a simple blog. I upgraded the MySQL code I saw in an old tutorial and I decided to make it function in the real-world by learning to work with the Microsoft Azure cloud.
 
 Additionally, I learned:
 
-- some alternate page routing (Router-6) methods from Llama dev on his MySQL project
+- some alternate page routing (Router-6) methods
 
-- MySQL2 - Llama dev used the older MySQL import, but I wanted to use the more current MySQ2 which has different syntax; some docs digging got the results I was after
+- MySQL2 - an old tutorial used the older MySQL import, but I wanted to use the more current MySQ2 which has different syntax; some docs digging got the results I was after
 
-- React-Quill - A simple, but functional wordprocessor I easily dropped in
+- React-Quill - a simple, but functional wordprocessor I easily dropped in
 
 - I experimented with single-page-CSS for less files; labeled and organized properly, it was surprisingly easy to target/find all classes; note it's not a huge project
 
@@ -33,10 +33,6 @@ It features:
 - Images for posts uploadable through Cloudinary
 
 - Stable and high-end performance through the Azure Cloud MySQL Server
-
-## Based on a Llama Dev Blog
-
-https://www.youtube.com/watch?v=0aPLk2e2Z3g
 
 ## Content License
 
